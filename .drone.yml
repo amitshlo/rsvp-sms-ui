@@ -2,5 +2,5 @@ pipeline:
   build:
     image: node:alpine
     commands:
-      - npm install
+      - yarn
       - npm run build

@@ -15,7 +15,7 @@ export class GridContainerComponent implements OnInit {
   columnDefs = [
     {headerName: 'Name', field: 'name', editable: true },
     {headerName: 'Phone Number', field: 'number', editable: true },
-    {headerName: 'Number of invited guests', field: 'invited_count', editable: true }
+    {headerName: 'Number of invited guests', field: 'invited_count', editable: true },
     {headerName: 'Number of approved guests', field: 'rsvp_count', editable: true }
   ];
   isModalOpen;
