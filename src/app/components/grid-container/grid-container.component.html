@@ -1,0 +1,32 @@
+<div class="level">
+  <div class="level-left">
+    <div class="level-item"><p class="title">Guest list:</p></div>
+  </div>
+  <div class="level-right">
+    <div class="level-item"><a class="button is-success" (click)="exportData()"><fa-icon [icon]="icons.fileExport"></fa-icon>&nbsp; Export to CSV</a></div>
+    <div class="level-item"><a class="button is-danger" (click)="sendSMS()"><fa-icon [icon]="icons.sms"></fa-icon>&nbsp; Send SMS</a></div>
+  </div>
+</div>
+<ag-grid-angular
+  style="height: 665px;"
+  class="ag-theme-balham"
+  [gridOptions]="gridOptions"
+  [rowData]="rowData">
+</ag-grid-angular>
+<div class="modal" [class.is-active]="isModalOpen">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="level box">
+        <div class="level-left">
+          <div class="level-item"><div class="subtitle is-4">
+            <div *ngIf="smsSuccess === 0"><fa-icon [icon]="icons.loading" [spin]="true"></fa-icon>&nbsp; Please wait...</div>
+            <div *ngIf="smsSuccess === 1">SMS was sent to all guests!</div>
+            <div *ngIf="smsSuccess === 2">Error! Please look at the console for details.</div>
+          </div></div>
+        </div>
+        <div class="level-right">
+          <a class="button is-danger is-left" *ngIf="smsSuccess !== 0" (click)="toggleModel()">Close</a>
+        </div>
+      </div>
+  </div>
+</div>
